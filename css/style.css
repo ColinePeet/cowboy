@@ -1,19 +1,158 @@
+html, body { 
+    width: 100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1e1e1e;
+    font-size: 0px;
+}
+a{
+    text-decoration: none;
+    color: #1e1e1e;
+}
+
 /** header */
 header{
     background: url('../img/Cowboy_Hero_Main.webp') center/cover;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
+    padding: 35px;
+    box-sizing: border-box;
 }
-nav.menu{
+header nav{
     position: fixed;
+    display: block;
+    box-sizing: border-box;
+}
+header nav a {
+    padding-right: 40px;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.nav-right ul li{
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+header .nav-left .line {
+    padding: 5px 0 5px 0;
+    margin-right: 40px;
+    position: relative;
+}
+header .nav-left .line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid black;
+    transform: scale(0, 1);
+    transform-origin: 0 100%;
+    transition: 0.33s all ease-in-out;
+}
+header .nav-left .line:hover::before {
+    transform: scale(1, 1);
+}
+.nav-left a img{
+    vertical-align: middle
 }
 .nav-right{
     right: 0;
+    top: 0;
 }
+.nav-right ul {
+    font-weight: 500;
+    list-style-type: none;
+}
+
+.nav-right ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.nav-right ul li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding-inline-start: 0px;
+}
+.nav-right ul li:hover ul {
+    display: block;
+}
+.nav-right ul li ul li {
+    width: 100%;
+    background-color: #fff;
+    color: black;
+    padding: 40px 0px 40px 0;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.en{
+    padding-top: 80px;
+}
+
 .header-texte{
     position: absolute;
     bottom: 0;
+    margin-left: 70px;
+    margin-bottom: 50px;
 }
+h1{
+    font-size: 100px;
+    line-height: 92px;
+    letter-spacing: -5px;
+    margin-bottom: 40px;
+}
+.header-texte p{
+    font-size: 18px;
+    line-height: 33px;
+    color: #808080
+}
+.header-texte a{
+    font-size: 18px;
+    line-height: 33px;
+    color: #ff3465
+}
+.box-grey{
+    background: #1e1e1e;
+    padding: 40px;
+    color: #fff;
+    transition: .3s all linear;
+}
+.box-fr{
+    padding: 40px;
+    color: #000;
+    transition: .1s all linear;
+}
+.box-pink{
+    background: #ff3465;
+    padding: 40px;
+    color: #fff;
+    transition: .3s all linear;
+}
+.box-pink:hover{
+    background: #fff;
+    color: #1e1e1e
+}
+.box-grey:hover{
+    background: #fff;
+    color: #1e1e1e
+}
+.box-fr:hover{
+    background: #FFF;
+    color: #000;
+    text-transform: capitalize;
+}
+
+/** header end */
+
 nav.logo{
     background: #ff3465;
     color: #fff;
@@ -38,14 +177,16 @@ nav.logo{
     top: 50%;
     transform: translate(0%, -50%);
     width: 100%;
-    height: 120px;
+    max-height: 120px;
     padding-left: 18px;
     padding-right: 18px;
     box-sizing: border-box;
 }
-/** header end */
+.tc{
+    height: 80px;
+}
 
-/** article */
+/** article image et texte */
 
 /** forme */
 .design{
@@ -60,13 +201,17 @@ nav.logo{
     display: inline-block;
     position: relative;
 }
+.design .texte{
+    vertical-align: top;
+}
 .design .texte-inner{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #1e1e1e;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%)
+}
+.design .image{
+    overflow: hidden;
 }
 .design .image img {
     width: 100%;
@@ -92,5 +237,134 @@ nav.logo{
     font-size: 18px;
     line-height: 18px;
     letter-spacing: 1px;
-    text-decoration: none;
+}
+/** article image et texte END */
+
+/** article review */
+.review {
+    background: #FAFAFA;
+    width: 100%;
+    height: 110vh;
+    padding: 55px;
+    box-sizing: border-box;
+}
+.bloc-review{
+    background: #fff;
+    width: 283px;
+    height: 318px;
+    padding: 54px 36px;
+    margin: 0 15px;
+    display: inline-block;
+}
+.name{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.title .texte, .title .stars{
+    margin-bottom: 20px;
+}
+.bloc-review .texte, .bloc-review .texte p{
+    font-size: 18px;
+    line-height: 33px;
+    color: #808080
+}
+.stars{
+    font-size: 16px;
+    color: #ff3465;
+    float: right;
+}
+.review-title{
+    margin: 0 18px;
+}
+.review-title div{
+    font-size: 14px;
+    line-height: 12px;
+    margin-top: 40px;
+}
+.review-title h3{
+    font-size: 50px;
+    line-height: 46px;
+    font-weight: bolder;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.review-title p{
+    font-size: 18px;
+    line-height: 33px;
+    color: #808080;
+    margin-bottom: 30px;
+}
+/** review end */
+
+/** footer */
+footer{
+    width: 100%;
+    height: 512px;
+    background: #1e1e1e;
+    color: #FAFAFA;
+    font-size: 14px;
+    line-height: 26px;
+}
+.rubrique, .rubrique-box{
+    display: inline-block;
+}
+.rubrique{
+    width: 33%;
+}
+.rubrique-box{
+    margin-right: 120px;
+}
+.rubrique p{
+    text-transform: uppercase;
+}
+.rubrique a{
+    color: #939393;
+    font-size: 14px;
+    line-height: 26px;
+    display: block
+}
+.logo-white{
+    width: 156px;
+}
+.strong{
+    font-weight: bold;
+}
+.border{
+    border-bottom: 1px solid rgb(255, 255, 255, 0.75);
+    width: 256px;
+}
+.footer-menu{
+    padding: 55px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.25);
+    padding-bottom: 100px;
+}
+.footer-credits{
+    padding: 55px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.25);
+    padding-bottom: 100px;
+}
+.credits p{
+    color: rgb(255, 255, 255, 0.75);
+    font-size: 12px;
+    line-height: 22px;
+}
+.credits a{
+    font-size: 11px;
+    line-height: 15px;
+    color: #fff
+}
+.icones{
+    display: inline-block;
+    color: #fff;
+}
+.icones a{
+    display: inline-block;
+}
+.terms{
+    padding-right: 50px;
+}
 }
